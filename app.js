@@ -23,8 +23,8 @@ app.post("/upload", upload.single("file"), async (req, res) => {
 
     res.json({ message: "File uploaded successfully!", data: response });
   } catch (error) {
-    res.status(500).json({ message: "File upload failed!", error });
+    res.status(500).json({   error: error.message });
   }
 });
-
+// message: "File upload failed!",
 app.listen(PORT, () => { console.log(`Server Running on http://localhost:${PORT}`)})
